@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elección de Lista Completa</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+
+<body>
+  <div class="container">
+    <h1 class="title">Elige una Lista Completa</h1>
+
+    <div class="custom-card" onclick="seleccionarLista('453')">
+      <img src="https://cdnb.artstation.com/p/assets/images/images/031/697/997/large/carlos-sander-centro.jpg" alt="Logo Lista 453" class="card-img-top">
+      <h2>Lista 453 - Completa</h2>
+    </div>
+
+    <div class="custom-card" onclick="seleccionarLista('101')">
+      <img src="https://enssarmiento-sjn.infd.edu.ar/sitio/wp-content/uploads/2019/09/Nuevo-Logo-CE.jpg" alt="Logo Lista 101" class="card-img-top">
+      <h2>Lista 101 - Completa</h2>
+    </div>
+    <button class="btn btn-enviar" onclick="enviarSeleccion()">Enviar</button>
+    <button class="btn btn-danger" onclick="window.location.href = 'index.html'">Atras</button>
+
+  </div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="prompt.js"></script>
+
+</body>
+
+</html>
