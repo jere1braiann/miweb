@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elección de Votación</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+    body {
+        display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #343a40;
+    }
+
+    .container {
+      max-width: 500px;
+      text-align: center;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.05);
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #000000;
+    }
+
+    .option-card {
+      margin-bottom: 20px;
+      cursor: pointer;
+      padding: 80px;
+      border: 5px solid #ccc;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .option-card.selected-card {
+      border-color: #28a745;
+      background-color: #05a04b;
+      color: #fff;
+    }
+
+    .option-card:hover {
+      border-color: #007bff;
+      background-color: #00172e;
+    }
+
+    .btn-votar {
+      width: 100%;
+      margin-top: 20px;
+      background-color: #007bff;
+      border-color: #5b88b7;
+      transition: all 0.3s ease;
+    }
+
+    .btn-votar:hover {
+      background-color: #0069d9;
+      border-color: #0062cc;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="title">Elige tu forma de votación</h1>
+
+    <div class="option-card" onclick="seleccionarVotacion('completa')"> 
+      <h2>Votar Lista Completa</h2>
+      <p>Votar por una lista completa de candidatos</p>
+    </div>
+
+    <div class="option-card" onclick="seleccionarVotacion('separado')"> 
+      <h2>Votar por Separado</h2>
+      <p>Votar de forma individual por cada cargo</p>
+    </div>
+
+    <button class="btn btn-primary btn-votar" onclick="siguientePagina()">Siguiente</button>
+  </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let selectedVotacion = null;
+
+    function seleccionarVotacion(votacion) {
+      selectedVotacion = votacion;
+      const optionCards = document.querySelectorAll('.option-card');
+      optionCards.forEach((card) => {
+        card.classList.remove('selected-card');
+      });
+      const selectedCard = document.querySelector(`[onclick="seleccionarVotacion('${votacion}')"]`);
+      selectedCard.classList.add('selected-card');
+    }
+
+    function siguientePagina() {
+      if (selectedVotacion) {
+        if (selectedVotacion === 'completa') {
+          window.location.href = 'completa.html';
+        } else if (selectedVotacion === 'separado') {
+          window.location.href = 'elegir.html';
+        }
+      } else {
+        alert('Debes seleccionar una opción antes de continuar');
+      }
+    }
+  </script>
+</body>
+
+</html>
