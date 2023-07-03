@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voto Emitido</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+        body {
+            background-color: #00203a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            color: #000;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-4">Su voto se emitió con éxito</h1>
+        <p class="lead">Retírese del cuarto oscuro</p>
+    </div>
+
+    <script>
+        // Función para redireccionar después de 8 segundos
+        function redirect() {
+            setTimeout(function() {
+                window.location.href = "http://localhost/ELECCIONES2023/ACCESO/ESTUDIANTES/";
+            }, 8000); // 5000 milisegundos = 8 segundos
+        }
+
+        // Llamar a la función de redireccionamiento al cargar la página
+        window.onload = redirect;
+    </script>
+</body>
+</html>

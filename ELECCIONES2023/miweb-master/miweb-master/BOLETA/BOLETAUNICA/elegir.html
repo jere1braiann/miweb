@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Web</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="elegir.css">
+</head>
+
+<body>
+  <div class="container">
+    <div id="presidente-section">
+      <div class="title-container">
+        <h1>Escoge Presidente y Vice</h1>
+      </div>
+
+      <div class="custom-card-container">
+        <div class="custom-card" onclick="seleccionarLista('lista1')" id="lista1-card">
+          <img src="ruta_imagen_lista1.png" class="card-img-top" alt="Lista 1">
+          <h3>Lista 453</h3>
+          <h4>Baggio Roberto - Presidente</h4>
+          <h5>El marido de pampita - Vicepresidente</h5>
+        </div>
+
+        <div class="custom-card" onclick="seleccionarLista('lista2')" id="lista2-card">
+          <img src="ruta_imagen_lista2.png" class="card-img-top" alt="Lista 2">
+          <h3>Lista 101</h3>
+          <h4>De Viel Cruella - Presidente</h4>
+          <h5>Walker Jonhy - Vicepresidente</h5>
+        </div>
+
+        <div class="custom-card" onclick="seleccionarVotoBlanco()" id="voto-blanco-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Blanco.svg/1200px-Blanco.svg.png" class="card-img-top" alt="Voto en Blanco">
+          <h3>Voto En Blanco</h3>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-siguiente" onclick="siguientePresidencia()">Siguiente</button>
+    </div>
+
+    <div id="secretarias-section" class="hidden">
+      <div class="title-container">
+        <h1>Escoge Secretarias</h1>
+      </div>
+
+      <div class="custom-card-container">
+        <div class="custom-card" onclick="seleccionarListaSecretarias('lista-a-secretarias')" id="lista-a-secretarias-card">
+          <img src="ruta_imagen_lista2.png" class="card-img-top" alt="Lista A">
+          <h3>Lista 453</h3>
+          <div>
+            <h4>Perón Isabelle - Secretaria General</h4>
+            <h5>De Escalada Remedios- Secretario de gumball</h5>
+            <h5>De Escalada Remedios- Secretario de gumball</h5>
+            <h5>De Escalada Remedios- Secretario de gumball</h5>
+            <h5>De Escalada Remedios- Secretario de gumball</h5>
+            <h5>De Escalada Remedios- Secretario de gumball</h5>
+          </div>
+        </div>
+
+        <div class="custom-card" onclick="seleccionarListaSecretarias('lista-b-secretarias')" id="lista-b-secretarias-card">
+          <img src="ruta_imagen_lista1.png" class="card-img-top" alt="Lista B">
+          <h3>Lista 101</h3>
+          <h4>Messi Lionel - Secretaria General</h4>
+          <h5>Vegeti Pablo- Secretario de gumball</h5>
+          <h5>Santos Michael- Secretario de gumball</h5>
+          <h5>Rondon- Secretario de gumball</h5>
+          <h5>De Escalada Remedios- Secretario de gumball</h5>
+          <h5>De Escalada Remedios- Secretario de gumball</h5>
+        </div>
+
+        <div class="custom-card" onclick="seleccionarVotoBlancoSecretarias()" id="voto-blanco-secretarias-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Blanco.svg/1200px-Blanco.svg.png" class="card-img-top" alt="Voto en Blanco">
+          <h3>Voto En Blanco</h3>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-siguiente" onclick="siguienteSecretarias()">Siguiente</button>
+    </div>
+
+    <div id="resumen-section" class="hidden">
+      <div class="title-container">
+        <h1>Resumen de selecciones</h1>
+      </div>
+    
+      <div id="resumen-container">
+        <h2>Presidencia y Vicepresidencia:</h2>
+        <p>Selección: <span id="presidencia-seleccion"></span></p>
+        <h2>Secretarías:</h2>
+        <p>Selección: <span id="secretarias-seleccion"></span></p>
+      </div>
+
+      <div id="error-message" class="hidden">
+        <h2>Error:</h2>
+        <p id="error-text"></p>
+      </div>
+    
+      <button class="btn btn-primary btn-modificar" onclick="modificarSeleccion()">Modificar Selección</button>
+      <button id="btn-enviar" class="btn btn-success btn-enviar" onclick="enviarVoto()">Enviar Voto</button>
+    </div>
+    
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="elegir.js"></script>
+</body>
+
+</html>
